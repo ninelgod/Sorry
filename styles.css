@@ -1,0 +1,141 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #ffe0e0, #ffe6fa);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.container {
+  text-align: center;
+  animation: popIn 1s ease;
+}
+
+@keyframes popIn {
+  0% { transform: scale(0.8); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+h1 {
+  font-size: 3rem;
+  color: #880e4f;
+  text-shadow: 1px 1px #fff;
+}
+
+.buttons {
+  margin-top: 30px;
+  position: relative;
+  height: 100px;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+button {
+  font-size: 1.5rem;
+  padding: 12px 24px;
+  margin: 0 20px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+#yesBtn {
+  background-color: #4CAF50;
+  color: white;
+  position: relative;
+  z-index: 10;
+  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.6);
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.07); }
+  100% { transform: scale(1); }
+}
+
+#yesBtn::before,
+#yesBtn::after {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  animation: blink 1s infinite;
+}
+
+#yesBtn::before {
+  content: "👉";
+  left: -2.5rem;
+}
+
+#yesBtn::after {
+  content: "👈"; 
+  right: -2.5rem;
+}
+
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+#noBtn {
+  background-color: #f06292;
+  color: white;
+  position: fixed; 
+  z-index: 9999;   
+  box-shadow: 0 4px 15px rgba(240, 98, 146, 0.6);
+  pointer-events: all;
+  transition: none !important;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+  display: none;
+}
+
+.modal {
+  background: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 0 30px rgba(0,0,0,0.3);
+  animation: popUp 0.4s ease;
+}
+
+.modal p {
+  font-size: 1.5rem;
+  color: #880e4f;
+  margin-bottom: 20px;
+}
+
+.modal button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+@keyframes popUp {
+  from { transform: scale(0.7); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
