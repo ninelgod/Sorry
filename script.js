@@ -30,11 +30,12 @@ function closeModal() {
 }
 
 //Si quieres que al cerrar le redirija a tu chat de WhatsApp con un mensaje, solo quita el commit, reemplaza tu número y deja que el código haga lo suyo...
-/*
+
 function closeModal() {
-  const numero = "Aquí va tu número de WhatsApp"; // Reemplaza con tu número de WhatsApp y listo :) ft NINELGOD
+  const numero = "+51932668701"; // Reemplaza con tu número de WhatsApp y listo :) ft NINELGOD
   const mensaje = encodeURIComponent("Te perdono, eres lo mejor que me ha pasado ❤️ Te quiero.");
   const url = `https://wa.me/${numero}?text=${mensaje}`;
 
   window.location.href = url;
-}*/
+}
+
